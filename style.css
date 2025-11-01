@@ -1,0 +1,485 @@
+/* pentru toate pagina */
+html{
+    background-color: aliceblue;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+}
+
+/* ===== header ===== */
+/* nav */
+.navbar{
+    display: grid;
+    grid-template-columns: 1fr 5fr 1.5fr;
+    height: 50px;
+    align-items: center;
+    border-bottom: 1px solid aquamarine;
+    position: fixed;
+    background-color: aliceblue;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* toate link-urile din header sau nav */
+header a{
+    text-decoration: none;
+}
+
+/* diviziunea stanga din nav */
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo img{
+  display: flex;
+  border-radius: 3px;
+  aspect-ratio: 1/1;
+  max-width: 32px;
+  object-fit: cover;
+}
+
+/* cele 3 link-uri de mijloc (diviziunea centrala) din nav */
+.nav-links{
+    display: flex;
+    justify-content: center;
+    gap: 2.5vw;
+    font-size: clamp(0.9rem, 1.3vw, 2rem); 
+}
+
+/* ===== Hamburger Menu ===== */
+.hamburger {
+  display: none; /* ascuns pe desktop */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 1100; /* peste navbar */
+}
+
+/* liniile hamburgerului */
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* când e activ (meniul deschis) — se transformă în X */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* când meniul e activ (pe mobil) */
+.nav-links.active {
+  position: absolute;
+  top: 20px; /* sub navbar */
+  left: 120px;
+  background: rgba(0, 0, 0, 0.8); /* fundal elegant negru translucid */
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: flex-start;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  width: auto; /* nu mai e pe toată lățimea */
+}
+
+/* linkurile din meniu */
+.nav-links.active a {
+  color: #FFD700; /* auriu */
+  font-weight: 500;
+}
+
+/* efect fin la hover */
+.nav-links.active a:hover {
+  color: white;
+  transform: translateX(3px);
+  transition: 0.3s ease;
+}
+
+/* == diviziunea dreapta din nav == */
+.language-switcher {
+     display: flex;
+     align-items: center;
+     justify-content: end;
+     gap: 1rem;
+    font-size: clamp(0.9rem, 1.3vw, 1.2rem);
+}
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+    text-decoration: none;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.lang-option:hover {
+  background-color: blueviolet;
+}
+
+.separator {
+  color: #30084e;
+}
+/* == sfarsitul diviziunii drepte din nav == */
+/* ===== end of header ===== */
+
+/* ===== main ===== */
+main{
+    padding-top: 60px;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* h1 - Title */
+.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 1vw;
+  color: #222;
+}
+
+/* h2 - Subtitle */
+.hero h2 {
+  font-family: 'Raleway', sans-serif;
+  margin-top: 0;
+  color: #222;
+}
+/* ===== end of hero ===== */
+
+
+
+
+
+/* ===== container (with circle elements) =====  */
+.container{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 3vw;
+    margin: 3vw 3vw;
+}
+.my_picture {
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    width: 20vw;
+    max-width: 300px;
+    min-width: 60px;
+    object-fit: cover;
+}
+
+.circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    width: 15vw;
+    max-width: 150px;
+    min-width: 25px;
+    border-radius: 50%;
+    font-size: clamp(0.7rem, 1.4vw, 2.5rem);
+    font-weight: bold;
+    color: aliceblue;
+    text-decoration: none;
+    font-family: sans-serif;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+.circle:hover{
+    background-color: rgb(123, 77, 95);
+    transform: scale(1.05);
+}
+.home{
+    background-color: aqua;
+}
+.about{
+    background-color: chartreuse;
+}
+.projects-c{
+    background-color: coral;
+}
+@keyframes heartbeat {
+    0% {transform: scale(1);}
+    7.5% {transform: scale(1.05);}
+    15% {transform: scale(1);}
+    22.5% {transform: scale(1.05);}
+    30% {transform: scale(1);}
+    100% {transform: scale(1);}  
+}
+.contact{
+    background-color: deeppink;
+    animation: heartbeat 1.5s infinite;
+    transition: 0.3s;
+    box-shadow: inset 0 0 8px rgba(203, 0, 0, 1);
+}
+/* ===== end of container ===== */
+
+/* ====== class='intro'; ID='about' ====== */
+.intro {
+  max-width: 800px;          /* limitează lățimea pentru citire ușoară */
+  margin: 80px auto;         /* centrează pe orizontală + spațiu sus-jos */
+  padding: 60px 20px;           /* puțin spațiu pe margini */
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.7;
+  color: #222;
+  text-align: left;
+}
+
+/* paragrafele */
+.intro p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+/* efect fin la hover (opțional, doar estetic) */
+.intro:hover {
+  box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+/* ===== end of class='intro'; ID='about' ===== */
+
+/* ===== projects ===== */
+.projects {
+  padding: 80px 20px;
+  text-align: center;
+  background:  aliceblue;
+  color: coral;
+  border-top: 1px solid aquamarine;
+  border-bottom: 1px solid aquamarine;
+}
+
+.projects h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.projects-intro {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color:#331d1d;
+  font-size: 1.1rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  max-width: 320px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: 15px 20px 5px;
+  font-size: 1.2em;
+  border-top: 1px solid aquamarine;
+}
+
+.project-card p {
+  margin: 0 20px 15px;
+  color: #331d1d;
+  font-size: 0.95em;
+}
+
+.project-btn {
+  display: block;
+  margin: 0 20px 20px;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 8px;
+  background: #0078ff;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.project-btn:hover {
+  background: #005fcc;
+}
+/* ===== end of projects ===== */
+
+/* ===== contact me ===== */
+.contact-s {
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 40px 20px;
+  text-align: center;
+  background: aliceblue;
+  border-radius: 16px;
+  /* box-shadow: 0 8px 24px rgba(0,0,0,0.08); */
+  font-family: "Poppins", sans-serif;
+}
+
+.contact-s h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: deeppink;
+}
+
+.contact-s p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.contact-card {
+    width: 350px;           /* dimensiunea standard a unui card de vizită */
+    height: 180px;
+    background: rgba(255, 255, 255, 0.1); /* semi-transparent alb */
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    margin: 20px auto; /* centru pe pagină */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.45);
+}
+
+.contact-card p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.contact-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.contact-btn:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+.contact-s p strong {
+  color: #000;
+}
+/* ===== end of contact me ===== */
+/* ===== end of main ===== */
+
+/* ===== footer ===== */
+footer {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  background: #84b633;
+  color: #fff;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  background: #007bff;
+  box-shadow: 0 4px 12px rgba(56, 54, 54, 0.25);
+}
+.back-to-top:hover { transform: translateY(-3px); }
+/* ===== enf of footer ===== */
+
+/* Responsive for mobile */
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 22px;
+  }
+  .hero h2 {
+    font-size: 15px;
+  }
+   /* afișăm butonul pe mobil */
+  .hamburger {
+    display: flex;
+  }
+
+  /* ascundem meniul normal */
+  .nav-links {
+    display: none;
+  }
+
+  /* meniul activ — când e deschis */
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+.circle{
+  font-size : clamp(0.4rem, 2vw, 0.9rem);
+}
+.intro{
+  font-size : clamp(0.9rem, 2vw, 2rem);
+}
+}
