@@ -200,7 +200,7 @@ main{
     max-width: 150px;
     min-width: 25px;
     border-radius: 50%;
-    font-size: clamp(0.7rem, 1.4vw, 2.5rem);
+    font-size: clamp(0.7rem, 1.3vw, 2.1rem);
     font-weight: bold;
     color: aliceblue;
     text-decoration: none;
@@ -482,4 +482,5 @@ footer {
 .intro{
   font-size : clamp(0.9rem, 2vw, 2rem);
 }
+
 }
