@@ -444,8 +444,8 @@ footer {
   text-decoration: none;
   font-size: 20px;
   color: #fff;
-  background: #007bff;
-  box-shadow: 0 4px 12px rgba(56, 54, 54, 0.25);
+  background: rgba(56, 54, 54, 0.25);
+  box-shadow: 0 4px 12px rgba(31, 146, 203, 0.5);
 }
 .back-to-top:hover { transform: translateY(-3px); }
 /* ===== enf of footer ===== */
@@ -484,4 +484,5 @@ footer {
 }
 
 }
+
 
